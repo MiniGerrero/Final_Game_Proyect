@@ -1,28 +1,38 @@
 
-
+/*If you modificated something please DELETE the Numeral and the ColorDraw that 
+by some reason still creating automaticly and without reason
+I ALREADY TIRED THAT THIS STILL HAPPEN OMG, I WAS 10 MINUTE LOOKING BY THIS %#@!& ERROR
+*/
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
-    public InputPlayer ctrl;
+    // Declaracion Of variable
+    
+    //Movement of the Player Control X - Y
+    public InputPlayer ctrl; //Activading and adding the ctrl Sistem
     public float velocidad;
-    public Vector2 direcion;
+    private Vector2 direcion;
     public Rigidbody2D rigy;
-    public LayerMask flootLayer;
-    public Transform floorSystem;
-    public Vector3 BoxSistem;
-    public bool inFloor;
-    public float jumpForce;
+
+    //All this is for Jump Sistem
+    public LayerMask flootLayer; // this is for know which Layer is for detect the sistem
+    public Transform floorSystem; // this is for detect the floo
+    public Vector3 BoxSistem; // this is for draw and give the size of the Box Detection
+    public bool inFloor; // this is just for know is is touching the ground and activate the jump, maybe a i will adding a extra jump
+    public float jumpForce; 
+
+    //Here will Add the Life sistem or maybe
 
     
-    private void Awake()
+    private void Awake() // this are the Declaracion when the Game start
     {
         ctrl = new();
 
     }
 
-    private void OnEnable()
+    private void OnEnable() // this is just for activated 
     {
         ctrl.Enable();
         ctrl.Player.Jump.started += _ => Jump();
@@ -44,13 +54,13 @@ public class Player : MonoBehaviour
     {
         rigy.linearVelocity = new Vector2(direcion.x * velocidad, rigy.linearVelocity.y);
     }
-    private void Jump()
+    private void Jump() //Jump Sistem
     {
         if (inFloor){
             rigy.AddForce(new Vector2 (0, jumpForce), ForceMode2D.Impulse);
         }
     }
-    private void OnDrawGizmos()
+    private void OnDrawGizmos() //this is for draw the box for detext the Ground
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireCube(floorSystem.position, BoxSistem);

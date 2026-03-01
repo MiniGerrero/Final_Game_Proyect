@@ -650,15 +650,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
   velocidad: 4
-  direcion: {x: 0, y: 0}
   rigy: {fileID: 1736493150}
   flootLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   floorSystem: {fileID: 2112142510}
   BoxSistem: {x: 0.5, y: 0.2, z: 0}
   inFloor: 0
-  jumpForce: 4
+  jumpForce: 7
 --- !u!1 &2112142509
 GameObject:
   m_ObjectHideFlags: 0
