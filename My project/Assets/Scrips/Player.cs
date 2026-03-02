@@ -28,20 +28,20 @@ public class Player : MonoBehaviour
     
     private void Awake() // this are the Declaracion when the Game start
     {
-        ctrl = new();
+        ctrl = new(); // Para reservar Memoria.
 
     }
 
     private void OnEnable() // this is just for activated 
     {
-        ctrl.Enable();
-        ctrl.Player.Jump.started += _ => Jump();
+        ctrl.Enable(); // Para activar los controles durantes el juego
+        ctrl.Player.Jump.started += _ => Jump(); // Para activar el Button cuando este es precionado, => y esto indica a la funcion que va a llamar
     }
 
     private void OnDisable()
     {
-        ctrl.Disable();
-        ctrl.Player.Jump.started -= _ => Jump();
+        ctrl.Disable(); // Para Desactivar los controles
+        ctrl.Player.Jump.started -= _ => Jump(); // Para desactivar El Boton de salto
     }
     
     private void Update()
