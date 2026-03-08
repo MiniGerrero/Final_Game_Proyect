@@ -11,10 +11,10 @@ public class Player : MonoBehaviour
     // Declaracion Of variable
     
     //Movement of the Player Control X - Y
-    public InputPlayer ctrl; //Activading and adding the ctrl Sistem
+    private InputPlayer ctrl; //Activading and adding the ctrl Sistem
     public float velocidad;
     private Vector2 direcion;
-    public Rigidbody2D rigy;
+    [SerializeField] private Rigidbody2D rigy;
 
     //All this is for Jump Sistem
     public LayerMask flootLayer; // this is for know which Layer is for detect the sistem
@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
     public float jumpForce; 
 
     //Here will Add the Life sistem or maybe
-
+    [SerializeField]private LifeBar lifeBar;
     
     private void Awake() // this are the Declaracion when the Game start
     {
@@ -65,5 +65,6 @@ public class Player : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireCube(floorSystem.position, BoxSistem);
     }
+    
 
 }
