@@ -819,6 +819,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1660808703}
   - component: {fileID: 1660808704}
+  - component: {fileID: 1660808705}
   m_Layer: 5
   m_Name: BarraDeVida
   m_TagString: Untagged
@@ -898,6 +899,18 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1660808705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660808702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33f8796904f2b5c4994463a6af2511c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LifeBar
 --- !u!1 &1736493149
 GameObject:
   m_ObjectHideFlags: 0
@@ -1078,7 +1091,9 @@ MonoBehaviour:
   BoxSistem: {x: 0.5, y: 0.2, z: 0}
   inFloor: 0
   jumpForce: 7
-  lifeBar: {fileID: 0}
+  lifeBar: {fileID: 1660808705}
+  maxLife: 1
+  amountLife: 1
 --- !u!1 &2112142509
 GameObject:
   m_ObjectHideFlags: 0

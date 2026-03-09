@@ -3,6 +3,7 @@
 by some reason still creating automaticly and without reason
 I ALREADY TIRED THAT THIS STILL HAPPEN OMG, I WAS 10 MINUTE LOOKING BY THIS %#@!& ERROR
 */
+// If you don't know what mean [SerializeField] this just mean you can modeificate a Privated function on UnityState
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,21 +12,35 @@ public class Player : MonoBehaviour
     // Declaracion Of variable
     
     //Movement of the Player Control X - Y
+
     private InputPlayer ctrl; //Activading and adding the ctrl Sistem
     public float velocidad;
     private Vector2 direcion;
     [SerializeField] private Rigidbody2D rigy;
 
     //All this is for Jump Sistem
+
     public LayerMask flootLayer; // this is for know which Layer is for detect the sistem
     public Transform floorSystem; // this is for detect the floo
     public Vector3 BoxSistem; // this is for draw and give the size of the Box Detection
     public bool inFloor; // this is just for know is is touching the ground and activate the jump, maybe a i will adding a extra jump
     public float jumpForce; 
 
-    //Here will Add the Life sistem or maybe
-    [SerializeField]private LifeBar lifeBar;
-    
+    //Life Sistem
+
+    [SerializeField]private LifeBar lifeBar; // Have a Life Bar Update
+    [SerializeField]private float maxLife; // Max Amount of Life(Usually One )
+
+    public float amountLife; // Updated the life sistem
+
+    //Function Area
+
+    private void Start(){
+
+        lifeBar.StartLifeSystem(amountLife, maxLife);
+
+    }
+
     private void Awake() // this are the Declaracion when the Game start
     {
         ctrl = new(); // Para reservar Memoria.
@@ -46,25 +61,38 @@ public class Player : MonoBehaviour
     
     private void Update()
     {
+        
+        lifeBar.ActualLifeChange(amountLife); // This is a testing to know is work
+
         direcion = ctrl.Player.Move.ReadValue<Vector2>();
         inFloor = Physics2D.OverlapBox(floorSystem.position, BoxSistem, 0, flootLayer);
     }
 
     private void FixedUpdate()
     {
+
         rigy.linearVelocity = new Vector2(direcion.x * velocidad, rigy.linearVelocity.y);
+
     }
+
     private void Jump() //Jump Sistem
     {
+
         if (inFloor){
+
             rigy.AddForce(new Vector2 (0, jumpForce), ForceMode2D.Impulse);
+
         }
+
     }
+
     private void OnDrawGizmos() //this is for draw the box for detext the Ground
     {
+
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireCube(floorSystem.position, BoxSistem);
+
     }
-    
+
 
 }
