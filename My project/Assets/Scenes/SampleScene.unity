@@ -1094,6 +1094,7 @@ MonoBehaviour:
   lifeBar: {fileID: 1660808705}
   maxLife: 1
   amountLife: 1
+  Alive: 1
 --- !u!1 &2112142509
 GameObject:
   m_ObjectHideFlags: 0
