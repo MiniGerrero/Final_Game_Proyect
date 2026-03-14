@@ -15,24 +15,25 @@ public class Player : MonoBehaviour
     //Movement of the Player Control X - Y
 
     private InputPlayer ctrl; //Activading and adding the ctrl Sistem
-    public float velocidad;
+    [SerializeField]private float velocidad;
     private Vector2 direcion;
     [SerializeField] private Rigidbody2D rigy;
 
     //All this is for Jump Sistem
 
-    public LayerMask flootLayer; // this is for know which Layer is for detect the sistem
-    public Transform floorSystem; // this is for detect the floo
-    public Vector3 BoxSistem; // this is for draw and give the size of the Box Detection
-    public bool inFloor; // this is just for know is is touching the ground and activate the jump, maybe a i will adding a extra jump
-    public float jumpForce; 
+    [SerializeField]private LayerMask flootLayer; // this is for know which Layer is for detect the sistem
+    [SerializeField]private Transform floorSystem; // this is for detect the floor
+    [SerializeField]private Vector3 BoxSistem; // this is for draw and give the size of the Box Detection
+    [SerializeField]private bool inFloor; // this is just for know is is touching the ground and activate the jump, maybe a i will adding a extra jump
+    [SerializeField]private float jumpForce; 
 
     //Life Sistem
 
     [SerializeField]private LifeBar lifeBar; // Have a Life Bar Update
     [SerializeField]private float maxLife; // Max Amount of Life(Usually One )
-
-    public float amountLife; // Updated the life sistem
+    [SerializeField]private float amountLife; // Updated the life sistem
+    private bool Alive;
+    
 
     //Function Area
 
@@ -62,15 +63,16 @@ public class Player : MonoBehaviour
     
     private void Update()
     {
-
+        
         direcion = ctrl.Player.Move.ReadValue<Vector2>();
         inFloor = Physics2D.OverlapBox(floorSystem.position, BoxSistem, 0, flootLayer);
     }
 
     private void FixedUpdate()
     {
-
-        rigy.linearVelocity = new Vector2(direcion.x * velocidad, rigy.linearVelocity.y);
+        if (Alive){
+            rigy.linearVelocity = new Vector2(direcion.x * velocidad, rigy.linearVelocity.y);
+        }
 
     }
 
@@ -94,7 +96,7 @@ public class Player : MonoBehaviour
     }
     // Life Function
 
-    private void RecoverLife(float RecoverLife){
+    public void RecoverLife(float RecoverLife){
 
         if (amountLife < maxLife){
             amountLife += RecoverLife;
@@ -103,17 +105,18 @@ public class Player : MonoBehaviour
         lifeBar.ActualLifeChange(amountLife);
     }
 
-    private void Damage(float Damage){
-        amountLife -= Damage;
+    public void Damage(float Damage){
 
-        if (amountLife <= 0 ){
+        if (amountLife > 0 ){
+            amountLife -= Damage;
+        }else {
             Dead();
         }
 
         lifeBar.ActualLifeChange(amountLife);
 
     }
-    //Falta por Pulir
+
     private void Dead(){
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
