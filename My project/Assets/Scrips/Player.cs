@@ -6,6 +6,7 @@ I ALREADY TIRED THAT THIS STILL HAPPEN OMG, I WAS 10 MINUTE LOOKING BY THIS %#@!
 // If you don't know what mean [SerializeField] this just mean you can modeificate a Privated function on UnityState
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -61,8 +62,6 @@ public class Player : MonoBehaviour
     
     private void Update()
     {
-        
-        lifeBar.ActualLifeChange(amountLife); // This is a testing to know is work
 
         direcion = ctrl.Player.Move.ReadValue<Vector2>();
         inFloor = Physics2D.OverlapBox(floorSystem.position, BoxSistem, 0, flootLayer);
@@ -93,6 +92,33 @@ public class Player : MonoBehaviour
         Gizmos.DrawWireCube(floorSystem.position, BoxSistem);
 
     }
+    // Life Function
+
+    private void RecoverLife(float RecoverLife){
+
+        if (amountLife < maxLife){
+            amountLife += RecoverLife;
+        }
+
+        lifeBar.ActualLifeChange(amountLife);
+    }
+
+    private void Damage(float Damage){
+        amountLife -= Damage;
+
+        if (amountLife <= 0 ){
+            Dead();
+        }
+
+        lifeBar.ActualLifeChange(amountLife);
+
+    }
+    //Falta por Pulir
+    private void Dead(){
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
 
 
 }
