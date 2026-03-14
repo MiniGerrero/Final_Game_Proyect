@@ -13,25 +13,28 @@ public class Player : MonoBehaviour
     // Declaracion Of variable
     
     //Movement of the Player Control X - Y
-
     private InputPlayer ctrl; //Activading and adding the ctrl Sistem
+    [Header("Velocity")]
     [SerializeField]private float velocidad;
     private Vector2 direcion;
     [SerializeField] private Rigidbody2D rigy;
 
     //All this is for Jump Sistem
-
+    [Header("Jump Sistem")]
     [SerializeField]private LayerMask flootLayer; // this is for know which Layer is for detect the sistem
     [SerializeField]private Transform floorSystem; // this is for detect the floor
     [SerializeField]private Vector3 BoxSistem; // this is for draw and give the size of the Box Detection
+    [Tooltip("This is just for Debug")]
     [SerializeField]private bool inFloor; // this is just for know is is touching the ground and activate the jump, maybe a i will adding a extra jump
     [SerializeField]private float jumpForce; 
 
     //Life Sistem
-
+    [Header("Life System")]
     [SerializeField]private LifeBar lifeBar; // Have a Life Bar Update
     [SerializeField]private float maxLife; // Max Amount of Life(Usually One )
+    [Tooltip("Please don't put more life than maxLife, I don't what could happen")]
     [SerializeField]private float amountLife; // Updated the life sistem
+    [Tooltip("This is just for Debug")]
     [SerializeField]private bool Alive;
     
 
@@ -75,6 +78,7 @@ public class Player : MonoBehaviour
         }
 
     }
+    
 
     private void Jump() //Jump Sistem
     {
