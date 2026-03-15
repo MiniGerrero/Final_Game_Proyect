@@ -474,6 +474,7 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/6000.3.5f2/Editor/Data/Tools/BuildPipeline/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll"
 "Assets/InputPlayer.cs"
 "Assets/Scrips/EnemyControl.cs"
+"Assets/Scrips/EnemyState.cs"
 "Assets/Scrips/LifeBar.cs"
 "Assets/Scrips/ObjectFollow.cs"
 "Assets/Scrips/PlayerControl.cs"

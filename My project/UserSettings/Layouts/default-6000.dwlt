@@ -775,8 +775,8 @@ MonoBehaviour:
       m_ResourceFile: 
   m_ListAreaState:
     m_SelectedInstanceIDs:
-    - m_Data: 42276
-    m_LastClickedInstanceID: 42276
+    - m_Data: 36564
+    m_LastClickedInstanceID: 36564
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: []
     m_RenameOverlay:
@@ -1435,11 +1435,12 @@ MonoBehaviour:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs:
-      - m_Data: 42276
+      - m_Data: 36564
       m_LastClickedID:
         m_Data: 0
       m_ExpandedIDs:
       - m_Data: -1314
+      - m_Data: 48800
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
