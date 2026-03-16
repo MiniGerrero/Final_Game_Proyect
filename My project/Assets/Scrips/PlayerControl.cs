@@ -75,10 +75,12 @@ public class Player : MonoBehaviour
     {
         if (Alive){
             rigy.linearVelocity = new Vector2(direcion.x * velocidad, rigy.linearVelocity.y);
+            MovementSpin();
         }
 
     }
     
+    //Funciones Personalizadas
 
     private void Jump() //Jump Sistem
     {
@@ -124,6 +126,24 @@ public class Player : MonoBehaviour
     private void Dead(){
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    private bool LookingRight(){
+
+        return transform.localScale.x == 0;
+
+    }
+
+    private void MovementSpin(){
+        if  ((direcion.x > 0 && !LookingRight()) || (direcion.x < 0 && LookingRight()) ){
+            Spin();
+        }
+    }
+
+    private void Spin(){
+        Vector2 rotate = transform.localScale;
+        rotate.y = rotate.y == 0 ? 100 : 0;
+        transform.localScale = rotate;
     }
 
 
