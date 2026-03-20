@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
     private InputPlayer ctrl; //Activading and adding the ctrl Sistem
     [Header("Velocity")]
     [SerializeField]private float velocidad;
-    private Vector2 direcion;
+    [SerializeField]private Vector2 direcion;
     [SerializeField] private Rigidbody2D rigy;
 
     //All this is for Jump Sistem
@@ -37,6 +37,8 @@ public class Player : MonoBehaviour
     [Tooltip("This is just for Debug")]
     [SerializeField]private bool Alive;
     
+    // RotationSistem
+    [SerializeField]private bool test = false;
 
     //Function Area
 
@@ -127,22 +129,16 @@ public class Player : MonoBehaviour
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-
-    private bool LookingRight(){
-
-        return transform.localScale.x == 0;
-
-    }
-
     private void MovementSpin(){
-        if  ((direcion.x > 0 && !LookingRight()) || (direcion.x < 0 && LookingRight()) ){
+        if  ((direcion.x > 0 && !test) || (direcion.x < 0 && test) ){
             Spin();
         }
     }
 
     private void Spin(){
+        test = !test;
         Vector2 rotate = transform.localScale;
-        rotate.y = rotate.y == 0 ? 100 : 0;
+        rotate.x *= -1;
         transform.localScale = rotate;
     }
 

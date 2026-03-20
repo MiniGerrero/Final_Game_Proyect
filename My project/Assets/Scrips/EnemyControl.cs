@@ -22,18 +22,42 @@ public class Enemy : MonoBehaviour
     private void start(){
         actualVelocity = baseVelocity;
     }
+
     private void Update()
     {
         wallTouched = Physics2D.Raycast(controlFront.position, transform.right, distanceLineDetection, wallMask);
     }
+
     private void FixedUpdate()
     {
+        switch (enemyState)
+        {
+            case EnemyState.Patrol:
+                ChangeDirecion();
+                break;
+            default:
+                break;
+        }
         rigy.linearVelocity = new Vector2(actualVelocity, rigy.linearVelocity.y);
     }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawLine(controlFront.position, controlFront.position + distanceLineDetection * transform.right);
        
+    }
+    
+    private void ChangeDirecion()
+    {
+        if (wallTouched)
+        {
+            Vector2 rotation;
+
+            rotation.y = transform.eulerAngles.y == 0 ? 180:0;
+            actualVelocity *= -1;
+            transform.eulerAngles = rotation.y;
+
+        }
     }
 }
