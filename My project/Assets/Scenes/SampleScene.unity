@@ -870,7 +870,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   rigy: {fileID: 891392012}
   enemyState: 0
-  baseVelocity: 0
+  baseVelocity: 1
   actualVelocity: 0
   controlFront: {fileID: 1049001120}
   wallMask:
@@ -878,6 +878,7 @@ MonoBehaviour:
     m_Bits: 8
   wallTouched: 0
   distanceLineDetection: 2
+  damage: 20
 --- !u!212 &891392014
 SpriteRenderer:
   serializedVersion: 2
@@ -1606,8 +1607,8 @@ MonoBehaviour:
   inFloor: 0
   jumpForce: 7
   lifeBar: {fileID: 1660808705}
-  maxLife: 1
-  amountLife: 1
+  maxLife: 200
+  amountLife: 200
   Alive: 1
   test: 0
 --- !u!1 &2112142509

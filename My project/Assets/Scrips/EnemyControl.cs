@@ -16,10 +16,13 @@ public class Enemy : MonoBehaviour
     [SerializeField] private bool wallTouched;
     [SerializeField] private float distanceLineDetection;
 
+    [Header("Damages")]
+    public float damage;
+
 
 
     // Update is called once per frame
-    private void start(){
+    private void Start(){
         actualVelocity = baseVelocity;
     }
 
@@ -52,11 +55,10 @@ public class Enemy : MonoBehaviour
     {
         if (wallTouched)
         {
-            Vector2 rotation;
-
-            rotation.y = transform.eulerAngles.y == 0 ? 180:0;
             actualVelocity *= -1;
-            transform.eulerAngles = rotation.y;
+
+            float rotation = transform.eulerAngles.y == 0 ? 180:0;
+            transform.eulerAngles = new Vector3(0, rotation, 0);
 
         }
     }

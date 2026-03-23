@@ -104,6 +104,16 @@ public class Player : MonoBehaviour
     }
     // Life Function
 
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        
+        Enemy enemy = other.gameObject.GetComponent<Enemy>();
+        if (enemy != null)
+        {
+            Damage(enemy.damage);
+        }
+    }
+
     public void RecoverLife(float RecoverLife){
 
         if (amountLife < maxLife){
@@ -141,6 +151,7 @@ public class Player : MonoBehaviour
         rotate.x *= -1;
         transform.localScale = rotate;
     }
+
 
 
 
