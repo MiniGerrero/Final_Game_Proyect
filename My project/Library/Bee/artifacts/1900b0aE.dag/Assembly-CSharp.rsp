@@ -125,6 +125,7 @@
 -define:ENABLE_UNITY_COLLECTIONS_CHECKS
 -define:ENABLE_BURST_AOT
 -define:UNITY_TEAM_LICENSE
+-define:UNITY_PRO_LICENSE
 -define:ENABLE_CUSTOM_RENDER_TEXTURE
 -define:ENABLE_DIRECTOR
 -define:ENABLE_LOCALIZATION
@@ -473,12 +474,12 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/6000.3.5f2/Editor/Data/Tools/BuildPipeline/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/6000.3.5f2/Editor/Data/Tools/BuildPipeline/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll"
 "Assets/InputPlayer.cs"
-"Assets/Scrips/EnemyControl.cs"
-"Assets/Scrips/EnemyState.cs"
-"Assets/Scrips/LifeBar.cs"
-"Assets/Scrips/ObjectFollow.cs"
-"Assets/Scrips/PlayerControl.cs"
-"Assets/Scrips/SineMovement.cs"
+"Assets/Platform/Scrips/EnemyControl.cs"
+"Assets/Platform/Scrips/EnemyState.cs"
+"Assets/Platform/Scrips/LifeBar.cs"
+"Assets/Platform/Scrips/ObjectFollow.cs"
+"Assets/Platform/Scrips/PlayerControl.cs"
+"Assets/Platform/Scrips/SineMovement.cs"
 -langversion:9.0
 /deterministic
 /optimize+
