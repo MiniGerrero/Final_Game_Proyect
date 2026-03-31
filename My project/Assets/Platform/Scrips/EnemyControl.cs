@@ -41,6 +41,7 @@ public class Enemy : MonoBehaviour
                 break;
             case EnemyState.Attack:
 
+                break;
             default:
                 break;
         }
@@ -65,6 +66,6 @@ public class Enemy : MonoBehaviour
     }
     //Attack Code
     private void PlayerFollow(){
-
+        
     }
 }

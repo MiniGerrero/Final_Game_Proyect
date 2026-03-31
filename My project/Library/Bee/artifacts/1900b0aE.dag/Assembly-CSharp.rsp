@@ -476,10 +476,12 @@
 "Assets/InputPlayer.cs"
 "Assets/Platform/Scrips/EnemyControl.cs"
 "Assets/Platform/Scrips/EnemyState.cs"
+"Assets/Platform/Scrips/Level_Change_Door.cs"
 "Assets/Platform/Scrips/LifeBar.cs"
 "Assets/Platform/Scrips/ObjectFollow.cs"
 "Assets/Platform/Scrips/PlayerControl.cs"
 "Assets/Platform/Scrips/SineMovement.cs"
+"Assets/TowerDefense/Scipts/ClonePrefab.cs"
 -langversion:9.0
 /deterministic
 /optimize+
