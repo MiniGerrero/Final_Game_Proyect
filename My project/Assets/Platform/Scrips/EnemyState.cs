@@ -1,9 +1,8 @@
 using UnityEngine;
-
-public enum EnemyState 
-{
-    Patrol,
-    Attack,
-    Waiting,
-}
-
+    public enum EnemyState 
+    {
+        Patrol,
+        Waiting,
+        Attack,
+        ComeBack
+    }
