@@ -9,9 +9,10 @@ public class Enemy : MonoBehaviour
     [Header("Mode State Parameter")]
     [SerializeField] private EnemyState enemyState; // State posible for the enemy
     [SerializeField]private float MaxDistaceDect; // MaxDistace where the enemy will go  to the player for kill it
+    [SerializeField]private float lookUpRadios; // Radio that a Enemy will looking for a Enemy
     [Tooltip("You don't have to change those value if don't want, Just put the enemy where you want")]
     [SerializeField]private Vector2 startPoint; // Point Where the enemy will come back, You don't have to touche if you don't want
-    [SerializeField]private float lookUpRadios; // Radio that a Enemy will looking for a Enemy
+    
     //Player Detection
     [SerializeField] private LayerMask player;
     [SerializeField] private Transform playerTransform;

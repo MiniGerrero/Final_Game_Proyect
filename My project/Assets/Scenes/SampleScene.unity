@@ -503,7 +503,7 @@ Transform:
   m_GameObject: {fileID: 462761239}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -30.98, y: 1.71, z: 0}
+  m_LocalPosition: {x: -30.98, y: -2.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1060,15 +1060,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   rigy: {fileID: 891392012}
-  enemyState: 2
+  enemyState: 0
   MaxDistaceDect: 6
-  startPoint: {x: 0, y: 0}
   lookUpRadios: 4
+  startPoint: {x: 0, y: 0}
   player:
     serializedVersion: 2
     m_Bits: 128
   playerTransform: {fileID: 1736493153}
-  baseVelocity: 1
+  baseVelocity: 70
   actualVelocity: 0
   controlFront: {fileID: 1049001120}
   wallMask:
@@ -1076,7 +1076,7 @@ MonoBehaviour:
     m_Bits: 24
   wallTouched: 0
   distanceLineDetection: 2
-  damage: 20
+  damage: 999
 --- !u!212 &891392014
 SpriteRenderer:
   serializedVersion: 2
@@ -1145,7 +1145,7 @@ Transform:
   m_GameObject: {fileID: 891392011}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 24.17, y: 4.42, z: 0}
+  m_LocalPosition: {x: 13.67, y: 0.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1298,7 +1298,7 @@ Transform:
   m_GameObject: {fileID: 1049001119}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.076, y: -0.024, z: 0}
+  m_LocalPosition: {x: 0.27, y: -0.024, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1775,7 +1775,7 @@ Transform:
   m_GameObject: {fileID: 1736493149}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.61, y: 0.79311, z: 0}
+  m_LocalPosition: {x: 13.71, y: 1.71, z: 0}
   m_LocalScale: {x: 8, y: 8, z: 8}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1794,7 +1794,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db9e657a81534344f88dba3e094f2768, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
-  velocidad: 4
+  velocidad: 50
   direcion: {x: 0, y: 0}
   rigy: {fileID: 1736493150}
   flootLayer:
