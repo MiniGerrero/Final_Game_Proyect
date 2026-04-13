@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
     [SerializeField]private LifeBar lifeBar; // Have a Life Bar Update
     [SerializeField]private float maxLife; // Max Amount of Life(Usually One )
     [Tooltip("Please don't put more life than maxLife, I don't what could happen")]
-    [SerializeField]private float amountLife; // Updated the life sistem
+    public float amountLife; // Updated the life sistem
     [Tooltip("This is just for Debug")]
     [SerializeField]private bool Alive;
     

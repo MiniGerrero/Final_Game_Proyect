@@ -32,10 +32,17 @@ public class Enemy : MonoBehaviour
     [Header("Damages")]
     public float damage;
 
+    [Header("Dead System")]
+    [SerializeField] private Vector3 sizeOfBoxKill;
+    [SerializeField] private Transform boxKillPosition;
+    [SerializeField] private float deadTime = 0;
+    private bool isNotAlive;
+
 
 
     // Update is called once per frame
     private void Start()
+    
     {
         if (startPoint == Vector2.zero) // This is just when some not is Lazy for assiment a Coordinate
         {
@@ -50,6 +57,8 @@ public class Enemy : MonoBehaviour
     private void Update()
     {
         wallTouched = Physics2D.Raycast(controlFront.position, transform.right, distanceLineDetection, wallMask );
+        isNotAlive = Physics2D.OverlapBox(boxKillPosition.position, sizeOfBoxKill, 0, player);
+        Dead();
     }
 
     private void FixedUpdate(){
@@ -72,6 +81,11 @@ public class Enemy : MonoBehaviour
     }
 
     private void OnDrawGizmos(){ // This is for have a visual for develoment
+
+    
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireCube(boxKillPosition.position , sizeOfBoxKill);
+
         if (enemyState != EnemyState.Patrol){ // this is for just show the Visual Help when you need it and when not
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(transform.position, lookUpRadios);
@@ -155,6 +169,16 @@ public class Enemy : MonoBehaviour
         {
             enemyState = EnemyState.Waiting;
         
+        }
+    }
+
+    //Life System
+    private void Dead()
+    {
+        
+        if (isNotAlive){
+            Debug.Log("He died");
+            Destroy(gameObject, deadTime);
         }
     }
 }
