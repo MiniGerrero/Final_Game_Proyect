@@ -476,6 +476,7 @@
 "Assets/InputPlayer.cs"
 "Assets/Platform/Scrips/EnemyControl.cs"
 "Assets/Platform/Scrips/EnemyState.cs"
+"Assets/Platform/Scrips/GameOverButton.cs"
 "Assets/Platform/Scrips/Level_Change_Door.cs"
 "Assets/Platform/Scrips/LifeBar.cs"
 "Assets/Platform/Scrips/ObjectFollow.cs"

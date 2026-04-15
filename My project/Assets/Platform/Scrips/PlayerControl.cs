@@ -6,7 +6,7 @@ I ALREADY TIRED THAT THIS STILL HAPPEN OMG, I WAS 10 MINUTE LOOKING BY THIS %#@!
 // If you don't know what mean [SerializeField] this just mean you can modeificate a Privated function on UnityState
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
+
 
 public class Player : MonoBehaviour
 {
@@ -38,13 +38,18 @@ public class Player : MonoBehaviour
     [SerializeField]private bool Alive;
     
     // RotationSistem
-    [SerializeField]private bool test = false;
+    private bool CamaraRotation = false;
+    [SerializeField] private GameObject gameOverButton;
+    [Tooltip("This is for GameOver Button, Soo look up for a referent to this")]
+    
+    
 
     //Function Area
 
     private void Start(){
 
         lifeBar.StartLifeSystem(amountLife, maxLife);
+        gameOverButton.SetActive(false);
 
     }
 
@@ -78,6 +83,8 @@ public class Player : MonoBehaviour
         if (Alive){
             rigy.linearVelocity = new Vector2(direcion.x * velocidad, rigy.linearVelocity.y);
             MovementSpin();
+        }else {
+            Dead();
         }
 
     }
@@ -127,8 +134,9 @@ public class Player : MonoBehaviour
 
         if (amountLife > 0 ){
             amountLife -= Damage;
-        }else {
-            Dead();
+            if (amountLife <= 0){
+                Alive = false;
+            }
         }
 
         lifeBar.ActualLifeChange(amountLife);
@@ -137,16 +145,17 @@ public class Player : MonoBehaviour
 
     private void Dead(){
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        gameOverButton.SetActive(true);
+        Alive = false;
     }
     private void MovementSpin(){
-        if  ((direcion.x > 0 && !test) || (direcion.x < 0 && test) ){
+        if  ((direcion.x > 0 && !CamaraRotation) || (direcion.x < 0 && CamaraRotation) ){
             Spin();
         }
     }
 
     private void Spin(){
-        test = !test;
+        CamaraRotation = !CamaraRotation;
         Vector2 rotate = transform.localScale;
         rotate.x *= -1;
         transform.localScale = rotate;

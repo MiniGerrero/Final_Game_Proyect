@@ -146,7 +146,7 @@ MonoBehaviour:
   startPoint: {x: 0, y: 0}
   player:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 1024
   playerTransform: {fileID: 0}
   baseVelocity: 1
   actualVelocity: 0
