@@ -119,6 +119,7 @@ public class Player : MonoBehaviour
         {
             Damage(enemy.damage);
         }
+        
     }
 
     public void RecoverLife(float RecoverLife){

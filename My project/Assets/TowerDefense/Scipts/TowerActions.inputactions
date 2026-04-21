@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "name": "TowerActions",
+    "maps": [
+        {
+            "name": "GetMouseButtonDown",
+            "id": "b87926c6-5267-47ca-a2d1-5a77274ef1b1",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "8746d4a3-059e-4c69-90d4-dd423b960b72",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "e1863514-0d1a-404f-84a4-2773303cb42e",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

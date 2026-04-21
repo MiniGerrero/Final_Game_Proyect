@@ -479,10 +479,16 @@
 "Assets/Platform/Scrips/GameOverButton.cs"
 "Assets/Platform/Scrips/Level_Change_Door.cs"
 "Assets/Platform/Scrips/LifeBar.cs"
+"Assets/Platform/Scrips/LifeRecover.cs"
 "Assets/Platform/Scrips/ObjectFollow.cs"
 "Assets/Platform/Scrips/PlayerControl.cs"
 "Assets/Platform/Scrips/SineMovement.cs"
+"Assets/TowerDefense/Scipts/BulletBehavior.cs"
 "Assets/TowerDefense/Scipts/ClonePrefab.cs"
+"Assets/TowerDefense/Scipts/EnemyBehavior.cs"
+"Assets/TowerDefense/Scipts/GameTiming.cs"
+"Assets/TowerDefense/Scipts/Shooter.cs"
+"Assets/TowerDefense/Scipts/TowerActions.cs"
 -langversion:9.0
 /deterministic
 /optimize+
