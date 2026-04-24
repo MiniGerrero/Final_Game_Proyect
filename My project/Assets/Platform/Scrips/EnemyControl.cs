@@ -5,6 +5,8 @@ public class Enemy : MonoBehaviour
 {
     [Header("Referense")]
     [SerializeField] private Rigidbody2D rigy;
+    [SerializeField] private LayerMask player;
+    [SerializeField] private Transform playerTransform;
 
     [Header("Mode State Parameter")]
     [SerializeField] private EnemyState enemyState; // State posible for the enemy
@@ -14,8 +16,7 @@ public class Enemy : MonoBehaviour
     [SerializeField]private Vector2 startPoint; // Point Where the enemy will come back, You don't have to touche if you don't want
     
     //Player Detection
-    [SerializeField] private LayerMask player;
-    [SerializeField] private Transform playerTransform;
+
 
 
     [Header("Movement")]

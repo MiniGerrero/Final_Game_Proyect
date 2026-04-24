@@ -3,7 +3,8 @@
 public class ObjectFollow2D : MonoBehaviour
 {
     public Transform target; // The object for the camera to follow
-    public float followSpeed = 5f; //How quickly the camera follows
+    
+    public float followSpeed = 999f; //How quickly the camera follows
     public Vector2 offset = Vector2.zero; // How far the camera can be from the object/player
 
     void LateUpdate()

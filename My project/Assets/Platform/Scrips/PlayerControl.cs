@@ -7,17 +7,18 @@ I ALREADY TIRED THAT THIS STILL HAPPEN OMG, I WAS 10 MINUTE LOOKING BY THIS %#@!
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-
 public class Player : MonoBehaviour
 {
     // Declaracion Of variable
     
     //Movement of the Player Control X - Y
-    private InputPlayer ctrl; //Activading and adding the ctrl Sistem
+    public InputPlayer ctrl; //Activading and adding the ctrl Sistem
+    [Header("Parameter")]
+    [SerializeField] private Rigidbody2D rigy;
+    [SerializeField] private Animator animatior;
     [Header("Velocity")]
     [SerializeField]private float velocidad;
     [SerializeField]private Vector2 direcion;
-    [SerializeField] private Rigidbody2D rigy;
 
     //All this is for Jump Sistem
     [Header("Jump Sistem")]
@@ -82,6 +83,7 @@ public class Player : MonoBehaviour
     {
         if (Alive){
             rigy.linearVelocity = new Vector2(direcion.x * velocidad, rigy.linearVelocity.y);
+            animatior.SetFloat("Movement", Mathf.Abs(direcion.x));
             MovementSpin();
         }else {
             Dead();
@@ -150,7 +152,7 @@ public class Player : MonoBehaviour
         Alive = false;
     }
     private void MovementSpin(){
-        if  ((direcion.x > 0 && !CamaraRotation) || (direcion.x < 0 && CamaraRotation) ){
+        if  ((direcion.x < 0 && !CamaraRotation) || (direcion.x > 0 && CamaraRotation) ){
             Spin();
         }
     }
