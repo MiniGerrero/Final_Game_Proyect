@@ -4,6 +4,7 @@ by some reason still creating automaticly and without reason
 I ALREADY TIRED THAT THIS STILL HAPPEN OMG, I WAS 10 MINUTE LOOKING BY THIS %#@!& ERROR
 */
 // If you don't know what mean [SerializeField] this just mean you can modeificate a Privated function on UnityState
+
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -19,6 +20,8 @@ public class Player : MonoBehaviour
     [Header("Velocity")]
     [SerializeField]private float velocidad;
     [SerializeField]private Vector2 direcion;
+    public GameObject pauseMenu;
+    public bool isPaused;
 
     //All this is for Jump Sistem
     [Header("Jump Sistem")]
@@ -42,21 +45,23 @@ public class Player : MonoBehaviour
     private bool CamaraRotation = false;
     [SerializeField] private GameObject gameOverButton;
     [Tooltip("This is for GameOver Button, Soo look up for a referent to this")]
-    
-    
 
+    public bool dialogoMode = true;
+
+    
     //Function Area
 
     private void Start(){
 
-        lifeBar.StartLifeSystem(amountLife, maxLife);
+        lifeBar.StartLifeSystem(amountLife, maxLife);    
         gameOverButton.SetActive(false);
-
+        pauseMenu.SetActive(false);
     }
 
     private void Awake() // this are the Declaracion when the Game start
     {
         ctrl = new(); // Para reservar Memoria.
+   
 
     }
 
@@ -64,17 +69,32 @@ public class Player : MonoBehaviour
     {
         ctrl.Enable(); // Para activar los controles durantes el juego
         ctrl.Player.Jump.started += _ => Jump(); // Para activar el Button cuando este es precionado, => y esto indica a la funcion que va a llamar
+
     }
 
     private void OnDisable()
     {
         ctrl.Disable(); // Para Desactivar los controles
         ctrl.Player.Jump.started -= _ => Jump(); // Para desactivar El Boton de salto
+
     }
     
     private void Update()
     {
-        
+        if (ctrl.Player.Pause.WasPerformedThisFrame())
+        {
+            isPaused = !isPaused;
+            if (!isPaused)
+            {
+                Time.timeScale = 0f;
+                pauseMenu.SetActive(true);
+            }
+            else
+            {
+                Time.timeScale = 1f;
+                pauseMenu.SetActive(false);
+            }
+        }
         direcion = ctrl.Player.Move.ReadValue<Vector2>();
         inFloor = Physics2D.OverlapBox(floorSystem.position, BoxSistem, 0, flootLayer);
     }
@@ -82,16 +102,25 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         if (Alive){
-            rigy.linearVelocity = new Vector2(direcion.x * velocidad, rigy.linearVelocity.y);
-            animatior.SetFloat("Movement", Mathf.Abs(direcion.x));
-            MovementSpin();
-        }else {
+            if (dialogoMode)
+            {
+                rigy.linearVelocity = new Vector2(direcion.x * velocidad, rigy.linearVelocity.y);
+                animatior.SetFloat("Movement", Mathf.Abs(direcion.x));
+                MovementSpin();
+            }
+            else
+            {
+                rigy.linearVelocity = new Vector2(0 * velocidad, rigy.linearVelocity.y);
+                animatior.SetFloat("Movement", 0);
+            }
+        }else{
             Dead();
         }
 
     }
     
     //Funciones Personalizadas
+
 
     private void Jump() //Jump Sistem
     {
@@ -117,12 +146,19 @@ public class Player : MonoBehaviour
     {
         
         Enemy enemy = other.gameObject.GetComponent<Enemy>();
+        LifeRecover recoverLife = other.gameObject.GetComponent<LifeRecover>();
         if (enemy != null)
         {
             Damage(enemy.damage);
         }
+        if (recoverLife != null)
+        {
+            RecoverLife(recoverLife.lifeRecover);
+            Destroy(other.gameObject);
+        }
         
     }
+
 
     public void RecoverLife(float RecoverLife){
 
@@ -147,7 +183,7 @@ public class Player : MonoBehaviour
     }
 
     private void Dead(){
-
+        Time.timeScale = 0f;
         gameOverButton.SetActive(true);
         Alive = false;
     }
@@ -163,8 +199,5 @@ public class Player : MonoBehaviour
         rotate.x *= -1;
         transform.localScale = rotate;
     }
-
-
-
 
 }
