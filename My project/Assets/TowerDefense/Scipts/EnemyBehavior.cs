@@ -14,7 +14,6 @@ public class EnemyBehavior : MonoBehaviour
         {
             Destroy (gameObject);
         }
-        Instantiate(EnemyPrefab);
     }
 
     //Checks if collision is a bullet
@@ -26,7 +25,9 @@ public class EnemyBehavior : MonoBehaviour
         }
     }
 
-    void OnEnable()
+
+
+    /*void OnEnable()
     {
         //Listen for Spawn Event from GameTiming.cs
         GameTiming.Spawn += Update;
@@ -36,7 +37,9 @@ public class EnemyBehavior : MonoBehaviour
     {
         //Un-listen to prevent memory leaks
         GameTiming.Spawn -= Update;
-    }
+    }*/
+
+
 
 
 }

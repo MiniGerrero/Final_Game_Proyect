@@ -3,12 +3,29 @@ using UnityEngine;
 
 public class GameTiming : MonoBehaviour
 {
-    public static event Action Spawn;
+    // Enemy spawner
+    public GameObject EnemyPrefab;
+    public float startWait = 2.0f;
+    public float Wait = 2.0f;
+    // public static event Action Spawn;
 
-    public void Spawned()
-    {
-        Spawn?.Invoke();
+    void Start() {
+        // Start after _ seconds, repeat every _ seconds
+        InvokeRepeating("SpawnNewEnemy", startWait, Wait);
     }
+
+    void SpawnNewEnemy() {
+        GameObject clone = Instantiate(EnemyPrefab);
+    }
+
+
+
+    /*public void Spawned()
+    {
+        //trigger & check null for no listeners
+        Spawn?.Invoke();
+        
+        }*/
 }
 
     /*[ContextMenu("Run Function")]

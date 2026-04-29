@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyBehavior
   Health: 2
-  EnemyPrefab: {fileID: 0}
+  EnemyPrefab: {fileID: 7741527069685911700}
 --- !u!114 &4750577038372280899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,7 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29a074d529cf945029ef7cf40540c9df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Splines::UnityEngine.Splines.SplineAnimate
-  m_Target: {fileID: 0}
+  m_Target: {fileID: 8763940497934027253, guid: 23124d1e89b96e744b1fa130bd427f04, type: 3}
   m_PlayOnAwake: 1
   m_LoopMode: 0
   m_Method: 1
