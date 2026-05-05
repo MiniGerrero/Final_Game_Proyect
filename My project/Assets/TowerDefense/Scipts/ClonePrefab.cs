@@ -39,9 +39,9 @@ public class ClonePrefab : MonoBehaviour
 
    void Update()
    {
-    if (Input.GetMouseButtonDown(0))
+    if (clickAction.WasPerformedThisFrame())
     {
-        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         Instantiate(prefab, mousePos, Quaternion.identity);
     }
    }

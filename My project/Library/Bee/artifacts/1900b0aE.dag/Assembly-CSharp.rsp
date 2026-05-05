@@ -494,6 +494,7 @@
 "Assets/TowerDefense/Scipts/ClonePrefab.cs"
 "Assets/TowerDefense/Scipts/EnemyBehavior.cs"
 "Assets/TowerDefense/Scipts/GameTiming.cs"
+"Assets/TowerDefense/Scipts/SelfDestructSelfTimer.cs"
 "Assets/TowerDefense/Scipts/Shooter.cs"
 "Assets/TowerDefense/Scipts/TowerActions.cs"
 -langversion:9.0

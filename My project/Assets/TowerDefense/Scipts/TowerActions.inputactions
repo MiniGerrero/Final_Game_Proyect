@@ -7,7 +7,7 @@
             "id": "b87926c6-5267-47ca-a2d1-5a77274ef1b1",
             "actions": [
                 {
-                    "name": "New action",
+                    "name": "RightClick",
                     "type": "Button",
                     "id": "8746d4a3-059e-4c69-90d4-dd423b960b72",
                     "expectedControlType": "",
@@ -24,7 +24,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "RightClick",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

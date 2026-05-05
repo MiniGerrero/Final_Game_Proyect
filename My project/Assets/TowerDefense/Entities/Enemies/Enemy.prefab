@@ -233,7 +233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d3078b33bb595441920a53e78a21f13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyBehavior
-  Health: 2
+  Health: 20
   EnemyPrefab: {fileID: 7741527069685911700}
 --- !u!114 &4750577038372280899
 MonoBehaviour:

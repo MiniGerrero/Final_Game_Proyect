@@ -1,5 +1,13 @@
 sceneSetups:
+<<<<<<< Updated upstream
 - path: Assets/Scenes/test.unity
+=======
+<<<<<<< HEAD
+- path: Assets/Scenes/TowerDefense.unity
+=======
+- path: Assets/Scenes/test.unity
+>>>>>>> da518b4ee32b02a2cc724879433c6bbecbc031e4
+>>>>>>> Stashed changes
   isLoaded: 1
   isActive: 1
   isSubScene: 0
