@@ -10,11 +10,11 @@ public class LevellChange_Door : MonoBehaviour
     [Header("Level")]
     [Tooltip("If you are not Adding a Spefisifc level DON'T TOUCH THIS")]
     [SerializeField]private int activeScene;
+    [SerializeField]private int nextLevel = 1;
     private void Start(){
-        if (activeScene == 0){
-            Debug.Log("Esto Se activado");
-            activeScene = SceneManager.GetActiveScene().buildIndex;
-        }
+        
+        Debug.Log("Esto Se activado");
+        activeScene = SceneManager.GetActiveScene().buildIndex;
         
     }
 
@@ -26,6 +26,6 @@ public class LevellChange_Door : MonoBehaviour
     }
 
     private void LoadLevel(){
-        SceneManager.LoadScene(activeScene + 1);
+        SceneManager.LoadScene(activeScene + nextLevel);
     }
 }
