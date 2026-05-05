@@ -3,9 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags:
-  - Projectile
-  - Enemy
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -16,7 +14,7 @@ TagManager:
   - Enemy
   - Player
   - LifeRecover
-  - Bullet
+  - 
   - EnemyKiller
   - 
   - 

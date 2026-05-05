@@ -2,16 +2,17 @@ using UnityEngine;
 
 public class EnemyBehavior : MonoBehaviour
 {
+    //public GameObject gameObject;
     public float Health = 10;
+    //Define Enemy Prefab
     public GameObject EnemyPrefab;
-    public float DamageRecived = 0.5f;
 
     //Checks if health is at or below 0
     void Update()
     {
         if (Health <= 0f)
         {
-            Destroy(gameObject);
+            Destroy (gameObject);
         }
     }
 
@@ -20,7 +21,7 @@ public class EnemyBehavior : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Projectile"))
         {
-            Health -= DamageRecived;
+            Health -= 0.5f;
         }
     }
 

@@ -14,8 +14,7 @@ GameObject:
   - component: {fileID: 4108614643005328110}
   - component: {fileID: 6790205932427595273}
   - component: {fileID: 6258113655186928505}
-  - component: {fileID: 4507860421162180169}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Bullet
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -170,16 +169,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulletBehavior
   gameObject: {fileID: 3109875942800677078}
---- !u!114 &4507860421162180169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3109875942800677078}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 125b9e34e21fc4c40a7dd8094055b0c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TimedDestruction
-  DestroyAfter: 1

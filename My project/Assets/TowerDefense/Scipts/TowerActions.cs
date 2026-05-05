@@ -95,7 +95,7 @@ namespace GetMouseButtonDown
             ""id"": ""b87926c6-5267-47ca-a2d1-5a77274ef1b1"",
             ""actions"": [
                 {
-                    ""name"": ""RightClick"",
+                    ""name"": ""New action"",
                     ""type"": ""Button"",
                     ""id"": ""8746d4a3-059e-4c69-90d4-dd423b960b72"",
                     ""expectedControlType"": """",
@@ -112,7 +112,7 @@ namespace GetMouseButtonDown
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""RightClick"",
+                    ""action"": ""New action"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -123,7 +123,7 @@ namespace GetMouseButtonDown
 }");
             // GetMouseButtonDown
             m_GetMouseButtonDown = asset.FindActionMap("GetMouseButtonDown", throwIfNotFound: true);
-            m_GetMouseButtonDown_RightClick = m_GetMouseButtonDown.FindAction("RightClick", throwIfNotFound: true);
+            m_GetMouseButtonDown_Newaction = m_GetMouseButtonDown.FindAction("New action", throwIfNotFound: true);
         }
 
         ~@ClonePrefab()
@@ -204,7 +204,7 @@ namespace GetMouseButtonDown
         // GetMouseButtonDown
         private readonly InputActionMap m_GetMouseButtonDown;
         private List<IGetMouseButtonDownActions> m_GetMouseButtonDownActionsCallbackInterfaces = new List<IGetMouseButtonDownActions>();
-        private readonly InputAction m_GetMouseButtonDown_RightClick;
+        private readonly InputAction m_GetMouseButtonDown_Newaction;
         /// <summary>
         /// Provides access to input actions defined in input action map "GetMouseButtonDown".
         /// </summary>
@@ -217,9 +217,9 @@ namespace GetMouseButtonDown
             /// </summary>
             public GetMouseButtonDownActions(@ClonePrefab wrapper) { m_Wrapper = wrapper; }
             /// <summary>
-            /// Provides access to the underlying input action "GetMouseButtonDown/RightClick".
+            /// Provides access to the underlying input action "GetMouseButtonDown/Newaction".
             /// </summary>
-            public InputAction @RightClick => m_Wrapper.m_GetMouseButtonDown_RightClick;
+            public InputAction @Newaction => m_Wrapper.m_GetMouseButtonDown_Newaction;
             /// <summary>
             /// Provides access to the underlying input action map instance.
             /// </summary>
@@ -246,9 +246,9 @@ namespace GetMouseButtonDown
             {
                 if (instance == null || m_Wrapper.m_GetMouseButtonDownActionsCallbackInterfaces.Contains(instance)) return;
                 m_Wrapper.m_GetMouseButtonDownActionsCallbackInterfaces.Add(instance);
-                @RightClick.started += instance.OnRightClick;
-                @RightClick.performed += instance.OnRightClick;
-                @RightClick.canceled += instance.OnRightClick;
+                @Newaction.started += instance.OnNewaction;
+                @Newaction.performed += instance.OnNewaction;
+                @Newaction.canceled += instance.OnNewaction;
             }
 
             /// <summary>
@@ -260,9 +260,9 @@ namespace GetMouseButtonDown
             /// <seealso cref="GetMouseButtonDownActions" />
             private void UnregisterCallbacks(IGetMouseButtonDownActions instance)
             {
-                @RightClick.started -= instance.OnRightClick;
-                @RightClick.performed -= instance.OnRightClick;
-                @RightClick.canceled -= instance.OnRightClick;
+                @Newaction.started -= instance.OnNewaction;
+                @Newaction.performed -= instance.OnNewaction;
+                @Newaction.canceled -= instance.OnNewaction;
             }
 
             /// <summary>
@@ -304,12 +304,12 @@ namespace GetMouseButtonDown
         public interface IGetMouseButtonDownActions
         {
             /// <summary>
-            /// Method invoked when associated input action "RightClick" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// Method invoked when associated input action "New action" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
             /// </summary>
             /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-            void OnRightClick(InputAction.CallbackContext context);
+            void OnNewaction(InputAction.CallbackContext context);
         }
     }
 }
