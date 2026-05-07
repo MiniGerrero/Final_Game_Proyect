@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 using UnityEngine.InputSystem;
 
 public class ClonePrefab : MonoBehaviour
@@ -6,6 +7,9 @@ public class ClonePrefab : MonoBehaviour
    public GameObject prefab;
    public Camera mainCamera;
    public int idkplswork = 2;
+   public float Money;
+   public float MoneySpent;
+   public TMP_Text MoneyIndicator;
 
 
    public float coolTime = 3f;
@@ -39,12 +43,15 @@ public class ClonePrefab : MonoBehaviour
 
    void Update()
    {
-    if (clickAction.WasPerformedThisFrame())
+    MoneyIndicator.text = Money.ToString();
+    if (clickAction.WasPerformedThisFrame() )
     
     {
+      if (Money >= MoneySpent){
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
        
         Instantiate(prefab, mousePos, Quaternion.identity);
+        Money = Money-MoneySpent;}
     }
    }
 }

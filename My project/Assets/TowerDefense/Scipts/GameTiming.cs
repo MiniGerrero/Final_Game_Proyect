@@ -7,6 +7,7 @@ public class GameTiming : MonoBehaviour
     public GameObject EnemyPrefab;
     public float startWait = 2.0f;
     public float Wait = 2.0f;
+    public int[] EnemyRound;
     // public static event Action Spawn;
 
     void Start() {
@@ -15,6 +16,9 @@ public class GameTiming : MonoBehaviour
     }
 
     void SpawnNewEnemy() {
+        int round = 0;
+    
+
         GameObject clone = Instantiate(EnemyPrefab);
     }
 
@@ -28,7 +32,15 @@ public class GameTiming : MonoBehaviour
         }*/
 }
 
-    /*[ContextMenu("Run Function")]
-    void MyFunction() {
-        Debug.Log("Yay");
-    }*/
+/*
+        OnStart() {
+        int VarIndex = 1
+        }
+
+        Update();
+        RepeatIndex = read item (VarIndex) of EnemyRound
+
+        repeat(RepeatIndex) {
+            clone EnemyPrefab
+            wait 2 seconds
+        }*/
