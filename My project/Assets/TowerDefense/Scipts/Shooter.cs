@@ -34,10 +34,10 @@ public class Shooter : MonoBehaviour
         if (nearestEnemy != null && fireCooldown <= 0f) 
         {
             Vector2 direction = (nearestEnemy.transform.position - transform.position).normalized;
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            float angle = (Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg) + 90;
             transform.rotation = Quaternion.Euler(0, 0, angle);
 
-            GameObject proj = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+            GameObject proj = Instantiate(projectilePrefab, transform.position, /*Quaternion.identity,*/ Quaternion.Euler(0,0,angle));
             proj.GetComponent<Rigidbody2D>().linearVelocity = direction * projectileSpeed;
             fireCooldown = fireRate; //Reset timer
             //Destroy(proj, 3.0f);

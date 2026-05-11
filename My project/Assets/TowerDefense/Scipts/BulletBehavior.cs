@@ -6,8 +6,8 @@ public class BulletBehavior : MonoBehaviour
         Destroy(gameObject, 3f); //destroys after 5 seconds
     } */
 
-    public GameObject gameObject;
-    private void OnCollisionEnter2D(Collision2D collision)
+    public new GameObject gameObject;
+    public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {

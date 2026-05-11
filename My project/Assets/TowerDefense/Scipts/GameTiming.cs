@@ -16,9 +16,6 @@ public class GameTiming : MonoBehaviour
     }
 
     void SpawnNewEnemy() {
-        int round = 0;
-    
-
         GameObject clone = Instantiate(EnemyPrefab);
     }
 

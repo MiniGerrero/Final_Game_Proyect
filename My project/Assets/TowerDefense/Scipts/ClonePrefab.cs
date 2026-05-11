@@ -43,7 +43,7 @@ public class ClonePrefab : MonoBehaviour
 
    void Update()
    {
-    MoneyIndicator.text = Money.ToString();
+    MoneyIndicator.text = $"Score: {Money:f0}";
     if (clickAction.WasPerformedThisFrame() )
     
     {
