@@ -106,10 +106,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Shooter
   animator: {fileID: -4438592495616188322}
-  range: 5
-  fireRate: 0.28
+  range: 4.86
+  fireRate: 0.75
   projectilePrefab: {fileID: 3109875942800677078, guid: 206a81cf7378f6f44b8721f2ebb4ee59, type: 3}
-  projectileSpeed: 5
+  projectileSpeed: 20
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64

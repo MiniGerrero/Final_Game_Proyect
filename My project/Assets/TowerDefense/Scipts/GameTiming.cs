@@ -19,6 +19,8 @@ public class GameTiming : MonoBehaviour
         GameObject clone = Instantiate(EnemyPrefab);
     }
 
+    
+
 
 
     /*public void Spawned()

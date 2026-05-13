@@ -43,8 +43,8 @@ public class ClonePrefab : MonoBehaviour
 
    void Update()
    {
-    MoneyIndicator.text = $"Money Amount: {Money:f0}";
-    LifeIndicator.text = $"Money Amount: {amountLife:f0}";
+    MoneyIndicator.text = $"Money: {Money:f0}";
+    LifeIndicator.text = $"Life: {amountLife:f0}";
     if (clickAction.WasPerformedThisFrame() )
     
     {
