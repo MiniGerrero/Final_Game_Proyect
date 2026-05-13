@@ -24888,6 +24888,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 561564933482308915, guid: 5625b5ab7f89a5c49af9e14b57faa977, type: 3}
+      propertyPath: libar
+      value: 
+      objectReference: {fileID: 970923173}
+    - target: {fileID: 561564933482308915, guid: 5625b5ab7f89a5c49af9e14b57faa977, type: 3}
       propertyPath: lifeBar
       value: 
       objectReference: {fileID: 970923175}

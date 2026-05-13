@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
 
     //Life Sistem
     [Header("Life System")]
-    [SerializeField]private LifeBar lifeBar; // Have a Life Bar Update
+    [SerializeField]private LifeBar lifeBar;
     [SerializeField]private float maxLife; // Max Amount of Life(Usually One )
     [Tooltip("Please don't put more life than maxLife, I don't what could happen")]
     public float amountLife; // Updated the life sistem

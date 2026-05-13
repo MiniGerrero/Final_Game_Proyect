@@ -5,7 +5,7 @@ public class LifeBar : MonoBehaviour
 {
     private Slider lifeBarSlide;
 
-    private void Start(){
+    private void Awake(){
         lifeBarSlide = GetComponent<Slider>();
         
     }
