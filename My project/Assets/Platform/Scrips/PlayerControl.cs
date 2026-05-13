@@ -52,10 +52,10 @@ public class Player : MonoBehaviour
     //Function Area
 
     private void Start(){
-
-        lifeBar.StartLifeSystem(amountLife, maxLife);    
         gameOverButton.SetActive(false);
         pauseMenu.SetActive(false);
+        
+        lifeBar.StartLifeSystem(amountLife, maxLife);    
     }
 
     private void Awake() // this are the Declaracion when the Game start
@@ -81,6 +81,7 @@ public class Player : MonoBehaviour
     
     private void Update()
     {
+  
         if (ctrl.Player.Pause.WasPerformedThisFrame())
         {
             isPaused = !isPaused;

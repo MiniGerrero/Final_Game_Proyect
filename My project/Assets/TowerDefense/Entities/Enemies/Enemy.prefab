@@ -120,8 +120,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7741527069685911700}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.4992419, y: -0.50075704, z: 0.5007571, w: -0.49924183}
-  m_LocalPosition: {x: -5.3597827, y: -3.8750782, z: 0}
+  m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: -0.5}
+  m_LocalPosition: {x: -11.101831, y: -4.5771613, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -238,7 +238,8 @@ MonoBehaviour:
   OnSplineFinished:
     m_PersistentCalls:
       m_Calls: []
-  amounMoney: 1
+  amounMoney: 30
+  loseLife: 10
   towerManagementName: TowerDefenseManager
 --- !u!114 &4750577038372280899
 MonoBehaviour:
@@ -252,11 +253,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29a074d529cf945029ef7cf40540c9df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Splines::UnityEngine.Splines.SplineAnimate
-  m_Target: {fileID: 8763940497934027253, guid: 23124d1e89b96e744b1fa130bd427f04, type: 3}
+  m_Target: {fileID: 7499087264209917449, guid: 3f28ba89012a4bf48a7d1ba6810e1934, type: 3}
   m_PlayOnAwake: 1
   m_LoopMode: 0
   m_Method: 1
-  m_Duration: 21.07781
+  m_Duration: 26.382406
   m_MaxSpeed: 3
   m_EasingMode: 0
   m_AlignmentMode: 1

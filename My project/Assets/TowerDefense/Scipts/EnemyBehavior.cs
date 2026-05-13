@@ -12,6 +12,7 @@ public class EnemyBehavior : MonoBehaviour
     private SplineAnimate splineAnimate;
     private bool hasTriggered = false;
     [SerializeField]private int amounMoney;
+    [SerializeField]private int loseLife;
     [SerializeField]private string towerManagementName;
     private GameObject towerManage;
     private ClonePrefab moneySitem;
@@ -30,12 +31,13 @@ public class EnemyBehavior : MonoBehaviour
         {
             hasTriggered = true;
             OnSplineFinished?.Invoke();
-            //Debug.Log("pls Work crying rn");
+            moneySitem.amountLife -= loseLife;
             Destroy(gameObject);}
 
         if (Health <= 0f) //Checks if health is at or below 0
         {
             moneySitem.Money += amounMoney; 
+            moneySitem.nowPoint += 1;
             Destroy (gameObject);}}
 
     private void OnCollisionEnter2D(Collision2D collision) //Checks if collision is a bullet

@@ -3,8 +3,10 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField]private Player actividad;
+
     public void Resumen()
     {
+        actividad = GameObject.Find("Character").GetComponent<Player>();
         if (actividad != null)
         {
             actividad.isPaused = false;
