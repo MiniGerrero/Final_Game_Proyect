@@ -11,11 +11,18 @@ public class EnemyBehavior : MonoBehaviour
     public UnityEvent OnSplineFinished;
     private SplineAnimate splineAnimate;
     private bool hasTriggered = false;
+    [SerializeField]private int amounMoney;
+    [SerializeField]private string towerManagementName;
+    private GameObject towerManage;
+    private ClonePrefab moneySitem;
     #endregion
 
     void Start() //sets boolean (i think)
     {
-        splineAnimate = GetComponent<SplineAnimate>();}
+        towerManage = GameObject.Find(towerManagementName);
+        splineAnimate = GetComponent<SplineAnimate>();
+        moneySitem = towerManage.GetComponent<ClonePrefab>();
+    }
 
     void Update() //Checks status
     {
@@ -28,6 +35,7 @@ public class EnemyBehavior : MonoBehaviour
 
         if (Health <= 0f) //Checks if health is at or below 0
         {
+            moneySitem.Money += amounMoney; 
             Destroy (gameObject);}}
 
     private void OnCollisionEnter2D(Collision2D collision) //Checks if collision is a bullet
@@ -37,39 +45,5 @@ public class EnemyBehavior : MonoBehaviour
             Health -= DamageRecived;
         }}
 
-//#region junkCode1
 
-    /*[SerializeField] private SplineAnimate splineAnimate;
-
-    void OnEnable()
-    {
-        //Listen for line completion
-        if (splineAnimate != null)
-            splineAnimate.Completed += OnSplineFinished;
-    }
-
-    void OnDisable()
-    {
-        //unsub to prevent memo leaks
-        if (splineAnimate != null)
-            splineAnimate.Completed -= OnSplineFinished;
-    }
-
-    private void OnSplineFinished()
-    {
-        Debug.Log("fin");
-        Destroy (gameObject);
-    }*/
-//#region junkCode2
-    /*void OnEnable()
-    {
-        //Listen for Spawn Event from GameTiming.cs
-        GameTiming.Spawn += Update;
-    }
-
-    void OnDisable()
-    {
-        //Un-listen to prevent memory leaks
-        GameTiming.Spawn -= Update;
-    }*/
 }

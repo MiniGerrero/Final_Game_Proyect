@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 216130205123795529}
   - component: {fileID: 7560726670746102718}
   - component: {fileID: 4750577038372280899}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -234,11 +234,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyBehavior
   Health: 2
-  EnemyPrefab: {fileID: 7741527069685911700}
   DamageRecived: 0.5
   OnSplineFinished:
     m_PersistentCalls:
       m_Calls: []
+  amounMoney: 1
+  towerManagementName: TowerDefenseManager
 --- !u!114 &4750577038372280899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,8 +256,8 @@ MonoBehaviour:
   m_PlayOnAwake: 1
   m_LoopMode: 0
   m_Method: 1
-  m_Duration: 6.3233433
-  m_MaxSpeed: 10
+  m_Duration: 21.07781
+  m_MaxSpeed: 3
   m_EasingMode: 0
   m_AlignmentMode: 1
   m_ObjectForwardAxis: 2
